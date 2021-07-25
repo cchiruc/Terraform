@@ -5,5 +5,7 @@ output "out_sample" {
 variable "fruits" {
   default = "banana"
 }
-
+output "output1" {
+  value = var.fruits
+}
 
