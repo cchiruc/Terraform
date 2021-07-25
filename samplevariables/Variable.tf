@@ -3,7 +3,7 @@ output "out_sample" {
 }
 
 variable "FRUITS" {
-  default = banana
+  default = "banana"
 }
 
 
