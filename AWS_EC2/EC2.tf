@@ -2,7 +2,7 @@
 resource "aws_instance" "chiru_server" {
   ami           = "ami-074df373d6bafa625"
   instance_type = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.chiru_allow_all.id]
+  vpc_security_group_ids = [aws_security_group.chiru_allow_all1.id]
 
   tags = {
     Name = "chiru_server"
@@ -14,8 +14,8 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-resource "aws_security_group" "chiru_allow_all" {
-  name        = "chiru_allow_all"
+resource "aws_security_group" "chiru_allow_all1" {
+  name        = "chiru_allow_all1"
   description = "Allow all inbound traffic"
 
   ingress {
@@ -36,6 +36,6 @@ cidr_blocks      = ["0.0.0.0/0"]
 }
 
 tags = {
-Name = "chiru_allow_all"
+Name = "chiru_allow_all1"
 }
 }
