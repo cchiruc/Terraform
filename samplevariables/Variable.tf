@@ -9,3 +9,14 @@ output "output1" {
   value = var.fruits
 }
 
+variable "vegitables" {
+  default = [ "TOMOTTO" , "CARROT" ]
+}
+
+output "output2" {
+  value = var.vegitables[0]
+}
+
+output "output3" {
+  value = var.vegitables[1]
+}
