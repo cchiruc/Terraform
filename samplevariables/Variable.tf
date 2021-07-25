@@ -14,7 +14,7 @@ variable "vegitables" {
 }
 
 output "output2" {
-  value = var.vegitables[0]
+  value = "My Favorite Vegi is - ${var.vegitables[0]}"
 }
 
 output "output3" {
