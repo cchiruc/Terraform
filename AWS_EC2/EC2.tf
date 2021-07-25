@@ -21,7 +21,7 @@ resource "aws_security_group" "chiru_allow_all1" {
   ingress {
     description      = "TLS from VPC"
     from_port        = 0
-    to_port          = 0-65556
+    to_port          = 0-10000
 protocol         = "tcp"
 cidr_blocks      = ["0.0.0.0/0"]
 
