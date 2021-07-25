@@ -1,3 +1,3 @@
-output "sampleout" {
-  value = "hellO chiru"
+output "sample output " {
+  value = "hello chiru"
 }
