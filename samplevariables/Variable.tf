@@ -20,3 +20,15 @@ output "output2" {
 output "output3" {
   value = var.vegitables[1]
 }
+
+
+variable "NOTEPAD-COST" {
+  default = {
+    LENOVO = "THINKPAD 1200$"
+    HP     = "Pavilion 1000$"
+  }
+}
+
+output "notepad-cost" {
+  value = "My Laptop name and cost is - ${var.NOTEPAD-COST["LENOVO"]}"
+}
