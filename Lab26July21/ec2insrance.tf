@@ -5,6 +5,7 @@ terraform {
     bucket = "practice-chiru"
     key = "terraform/keys/terraform.tfstate"
     region = "us-east-1"
+    dynamodb_table = "chiru_table"
   }
 }
 resource "aws_instance" "test_host" {
