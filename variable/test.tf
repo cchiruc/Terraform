@@ -7,7 +7,7 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-resource "aws_security_group" "allow_all_front" {
+resource "aws_security_group" "allow_all" {
   name = "test_nsg"
   ingress {
     description      = "TLS from VPC"
