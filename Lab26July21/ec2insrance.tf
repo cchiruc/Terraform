@@ -16,6 +16,14 @@ resource "aws_instance" "test_host" {
     Name  = "test_host"
   }
 }
+resource "aws_instance" "test_host1" {
+  ami = "ami-074df373d6bafa625"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name  = "test_host1"
+  }
+}
 
 provider "aws" {
   region = "us-east-1"
