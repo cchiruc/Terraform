@@ -1,3 +1,3 @@
-output "print sample output" {
-  value = "welcome to KT sessions today"
+output "sample_output" {
+  value = "welcome to today session"
 }
