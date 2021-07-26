@@ -12,7 +12,7 @@ resource "aws_instance" "test_host" {
   instance_type = "t2.micro"
 
   tags = {
-    name  = "test_host"
+    Name  = "test_host"
   }
 }
 
