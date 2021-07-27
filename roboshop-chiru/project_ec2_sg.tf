@@ -31,6 +31,7 @@ resource "aws_security_group" "allow_project_roboshop" {
 }
 //tags creation for EC2 instance
 resource "aws_ec2_tag" "roboshop_instance" {
+  depends_on = [aws_spot_instance_request.project_roboshop]
   count       = length(var.COMPONENTS)
   resource_id = element(aws_spot_instance_request.project_roboshop.*.spot_instance_id,count.index )
   key         = "Name"
