@@ -38,7 +38,7 @@ resource "aws_ec2_tag" "roboshop_instance" {
   value       = element(var.COMPONENTS, count.index )
 }
 # pull the shall scripting code for installtion and configration of roboshop applicaitons.
-resource "aws_route53_record" "roboshop.internal" {
+resource "aws_route53_record" "roboshop_internal" {
   count = length(var.COMPONENTS)
   zone_id = Z04635172URQKFFOUCBQ5
   name    = element(var.COMPONENTS,count.index )
