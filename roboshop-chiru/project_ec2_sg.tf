@@ -32,7 +32,7 @@ resource "aws_security_group" "allow_project_roboshop" {
 //tags creation for EC2 instance
 resource "aws_ec2_tag" "roboshop instance" {
   count       = length(var.COMPONENTS)
-  resource_id = aws_spot_instance_request.project_roboshop.*.spot_instance_id
+  resource_id = element(aws_spot_instance_request.project_roboshop.*.spot_instance_id,count.index)
   key         = "Name"
   value       = element(var.COMPONENTS,count.index )
 }
