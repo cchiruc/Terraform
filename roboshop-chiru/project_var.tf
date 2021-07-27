@@ -1,1 +1,2 @@
+##Variable declaration
 variable "COMPONENTS" {}

@@ -1,4 +1,4 @@
-#To create EC2 spot intance.
+#To create EC2 spot intances.
 #price 0.03
 resource "aws_spot_instance_request" "project_roboshop" {
   count         = length(var.COMPONENTS)
