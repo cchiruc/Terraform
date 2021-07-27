@@ -33,7 +33,7 @@ resource "aws_security_group" "allow_project_roboshop" {
 resource "aws_ec2_tag" "roboshop_instance" {
   depends_on = [aws_route53_record.roboshop_internal]
   count       = length(var.COMPONENTS)
-  resource_id = element(aws_spot_instance_request.project_roboshop.*.spot_instance_id, count.index )
+  resource_id = element(aws_spot_instance_request.project_roboshop.*.spot_instance_id,count.index)
   key         = "Name"
   value       = element(var.COMPONENTS, count.index )
 }
@@ -44,7 +44,7 @@ resource "aws_route53_record" "roboshop_internal" {
   name    = element(var.COMPONENTS,count.index )
   type    = "A"
   ttl     = "300"
-  records = [element(aws_spot_instance_request.project_roboshop.*.private_ip,count.index )]
+  records = [element(aws_spot_instance_request.project_roboshop.*.private_ip,count.index)]
 }
 
 
