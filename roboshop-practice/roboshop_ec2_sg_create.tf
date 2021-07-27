@@ -47,6 +47,6 @@ resource "aws_ec2_tag" "roboshop_tag" {
   depends_on            = [aws_spot_instance_request.cheap_worker]
   count                 = length(var.COMPONENTS)
   resource_id           = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index )
-  key                   = "Owner"
+  key                   = "Name"
   value                 = element(var.COMPONENTS,count.index )
 }
