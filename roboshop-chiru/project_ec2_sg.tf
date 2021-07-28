@@ -47,9 +47,22 @@ resource "aws_route53_record" "roboshop_internal" {
   records = [element(aws_spot_instance_request.project_roboshop.*.private_ip,count.index)]
 }
 
+## Defining shell scripts for execution.
+resource "null_resource" "chiru-scripts" {
+  depends_on = [aws_route53_record.roboshop_internal]
+  count = length(var.COMPONENTS)
+  provisioner "remote-exec" {
+    connection {
+      host = element(aws_spot_instance_request.project_roboshop.*.private_ip, count.index )
+      user = "centos"
+      password = "DevOps"
+    }
 
-
-
-
-
-
+    inline = [
+      "cd /home/centos",
+      "git clone https://github.com/Polina-DevOps/Shell-Scripts.git",
+      "cd /home/centos/Shell-Scripts/Roboshop-Init",
+      "sudo make ${element(var.COMPONENTS,count.index )}"
+    ]
+  }
+}
