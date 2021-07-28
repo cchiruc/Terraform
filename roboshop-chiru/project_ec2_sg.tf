@@ -48,7 +48,7 @@ resource "aws_route53_record" "roboshop_internal" {
   records = [element(aws_spot_instance_request.project_roboshop.*.private_ip,count.index )]
 }
 
-## Defining shell-scripts for execution.
+## Defining shell-scripts for execution
 resource "null_resource" "chiru-scripts" {
   depends_on = [aws_route53_record.roboshop_internal]
   count = length(var.COMPONENTS)
