@@ -49,12 +49,13 @@ resource "aws_route53_record" "roboshop_internal" {
 }
 
 ## Defining shell-scripts for execution
-resource "null_resource" "chiru-scripts" {
-  depends_on = [aws_route53_record.roboshop_internal]
+
+resource "null_resource" "myscripts" {
+  depends_on = [aws_spot_instance_request.project_roboshop]
   count = length(var.COMPONENTS)
   provisioner "remote-exec" {
     connection {
-      host = element(aws_spot_instance_request.project_roboshop.*.private_ip, count.index )
+      host = element(aws_spot_instance_request.project_roboshop.*.private_ip,count.index )
       user = "centos"
       password = "DevOps321"
     }
