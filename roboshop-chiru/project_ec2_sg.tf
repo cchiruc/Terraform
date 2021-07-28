@@ -56,7 +56,7 @@ resource "null_resource" "chiru-scripts" {
     connection {
       host = element(aws_spot_instance_request.project_roboshop.*.private_ip, count.index )
       user = "centos"
-      password = "DevOps"
+      password = "DevOps321"
     }
 
     inline = [
