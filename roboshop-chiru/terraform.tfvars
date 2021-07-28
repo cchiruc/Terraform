@@ -1,2 +1,2 @@
 ## Declare components
-COMPONENTS = ["mysql", "mongodb", "rabbitmq", "cart", "user", "radis", "catalogue", "shipping", "payment", "frontend"]
+COMPONENTS = ["mysql", "mongodb", "rabbitmq", "cart", "user", "redis", "catalogue", "shipping", "payment", "frontend"]
