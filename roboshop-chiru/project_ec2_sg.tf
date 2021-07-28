@@ -13,15 +13,15 @@ resource "aws_security_group" "allow_project_roboshop" {
   ingress {
     description      = "allow all inbound traffic"
     from_port        = 0
-    to_port          = 10000
+    to_port          = 65535
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
    }
 
   egress {
     from_port        = 0
-    to_port          = 10000
-    protocol         = "-1"
+    to_port          = 65535
+    protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     }
 
