@@ -39,6 +39,7 @@ resource "aws_ec2_tag" "roboshop_instance" {
 }
 # pull the shall scripting code for installtion and configration of roboshop applicaitons.
 resource "aws_route53_record" "roboshop_internal" {
+  depends_on = [aws_spot_instance_request.project_roboshop]
   count   = length(var.COMPONENTS)
   zone_id = "Z04635172URQKFFOUCBQ5"
   name    = element(var.COMPONENTS,count.index )
