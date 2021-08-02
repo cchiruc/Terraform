@@ -3,7 +3,7 @@
 terraform {
   backend "s3" {
     bucket = "practice-chiru"
-    key = "terraform/roboshop-jenkins/terraform.tfstate"
+    key = "terraform/roboshop-jenkins-test/terraform.tfstate"
     region = "us-east-1"
     dynamodb_table = "chiru_table"
   }
