@@ -26,10 +26,16 @@ pipeline {
                  '''
               }
       }
+   }
 
+   stages {
        stage('Terraform Destroy') {
            when {
-                environment name: 'CHOICE', value: 'destroy'
+                environment name: 'CHOICE', value: 'delete'
+           }
+           input {
+                          message "Should we continue?"
+                          ok "Yes, we should."
            }
            steps {
               sh '''
