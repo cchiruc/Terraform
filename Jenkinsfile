@@ -26,6 +26,8 @@ pipeline {
                  '''
               }
       }
+   }
+   stages {
        stage('Terraform Destroy') {
            when {
                 environment name: 'CHOICE', value: 'destroy'
@@ -37,7 +39,7 @@ pipeline {
                steps {
                   sh '''
                   cd roboshop-chiru
-                  terraform destroy
+                  terraform destroy -auto-approve
                   '''
                }
        }
