@@ -10,7 +10,7 @@ pipeline {
                steps {
                   sh '''
                   echo "Running Terraform INIT"
-                  cd Terraform/roboshop-chiru
+                  cd roboshop-chiru
                   terraform init
                   '''
                }
@@ -21,7 +21,7 @@ pipeline {
            }
               steps {
                  sh '''
-                 cd Terraform/roboshop-chiru
+                 cd roboshop-chiru
                  terraform apply -auto-approve
                  '''
               }
@@ -36,7 +36,7 @@ pipeline {
            }
                steps {
                   sh '''
-                  cd Terraform/roboshop-chiru
+                  cd roboshop-chiru
                   terraform destroy
                   '''
                }
