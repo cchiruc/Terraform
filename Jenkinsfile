@@ -26,8 +26,7 @@ pipeline {
                  '''
               }
       }
-   }
-   stages {
+
        stage('Terraform Destroy') {
            when {
                 environment name: 'CHOICE', value: 'destroy'
