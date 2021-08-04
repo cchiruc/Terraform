@@ -31,16 +31,11 @@ pipeline {
            when {
                 environment name: 'CHOICE', value: 'destroy'
            }
-           input {
-               message "Should we continue?"
-               ok "Yes, we should."
-           }
-               steps {
-                  sh '''
-                  cd roboshop-chiru
-                  terraform destroy -auto-approve
-                  '''
-               }
+           steps {
+              sh '''
+              cd roboshop-chiru ; terraform destroy -auto-approve
+              '''
+          }
        }
     }
  }
