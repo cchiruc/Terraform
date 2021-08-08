@@ -1,3 +1,4 @@
+- name: hostname change for test host
 - hosts: all
   become: yes
   tasks:
