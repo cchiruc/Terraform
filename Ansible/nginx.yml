@@ -3,7 +3,7 @@
   tasks:
      -name: installtion of nginx
       apt: name=nginx state=latest
-     -name: starting of nginx service
+     -name: starting of nginx servic
       service:
           name: nginx
           state: started
