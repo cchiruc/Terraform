@@ -1,0 +1,3 @@
+- name : set a hostname for centos host
+  ansible.builtin.hostname:
+    name: test
