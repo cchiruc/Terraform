@@ -1,0 +1,10 @@
+- name: installtion and configuraiton of nginx
+  hosts: all
+  tasks:
+     -name: installtion of nginx
+      apt: name=nginx state=latest
+     -name: starting of nginx service
+      service:
+          name: nginx
+          state: started
+

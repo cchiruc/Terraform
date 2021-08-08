@@ -1,5 +1,5 @@
 - name: hostname change for test host
-- hosts: all
+  hosts: all
   become: yes
   tasks:
     ansible.builtin.hostname:
