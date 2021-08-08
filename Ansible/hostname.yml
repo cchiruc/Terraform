@@ -3,4 +3,4 @@
   become: yes
   tasks:
     ansible.builtin.hostname:
-    name: test
+      name: test
