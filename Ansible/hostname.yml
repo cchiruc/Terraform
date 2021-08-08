@@ -1,4 +1,4 @@
-- name : set a hostname for centos host
+- hosts: all
   become: yes
   tasks:
     ansible.builtin.hostname:
