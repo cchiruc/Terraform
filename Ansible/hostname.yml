@@ -1,6 +1,5 @@
 - name : set a hostname for centos host
   become: yes
   tasks:
-  host: 172.31.8.112
-  ansible.builtin.hostname:
+    ansible.builtin.hostname:
     name: test
